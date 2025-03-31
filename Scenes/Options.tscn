@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3hmh8upxlg8x"]
+[gd_scene load_steps=8 format=3 uid="uid://b3hmh8upxlg8x"]
 
 [ext_resource type="Script" uid="uid://vot3tmfadcni" path="res://Scripts/options.gd" id="1_5hy3q"]
 [ext_resource type="Texture2D" uid="uid://cydnohtkyqag0" path="res://Assets/Level-background/Main_menu.jpg" id="1_qqnya"]
@@ -7,6 +7,10 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hg628"]
 texture = ExtResource("1_qqnya")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cbhj7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q4at1"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -106,6 +110,7 @@ offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cbhj7")
 text = "Mute"
 
 [node name="Resolution Label" type="Label" parent="Panel"]
@@ -137,6 +142,7 @@ offset_right = -46.0
 offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q4at1")
 selected = 3
 item_count = 4
 popup/item_0/text = "1920x1080"
@@ -162,6 +168,7 @@ offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cbhj7")
 text = "FullScreen"
 
 [node name="back" type="Button" parent="."]
@@ -184,5 +191,10 @@ text = "Back"
 [node name="HoverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_cbhj7")
 
+[connection signal="value_changed" from="Panel/Master Volume" to="." method="_on_master_volume_value_changed"]
+[connection signal="value_changed" from="Panel/Music Volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="toggled" from="Panel/Mute" to="." method="_on_mute_toggled"]
+[connection signal="item_selected" from="Panel/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="toggled" from="Panel/FullScreen" to="." method="_on_full_screen_toggled"]
 [connection signal="mouse_entered" from="back" to="." method="_on_back_mouse_entered"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

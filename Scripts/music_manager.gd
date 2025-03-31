@@ -11,3 +11,6 @@ func _play_music(music:AudioStream,volume = 0.0) :
 	
 func play_bg_music():
 	_play_music(bgmusic)
+	
+func change_volume(new_volume: float):
+	volume_db = new_volume
