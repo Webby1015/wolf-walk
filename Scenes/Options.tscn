@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3hmh8upxlg8x"]
+
+[ext_resource type="Script" uid="uid://vot3tmfadcni" path="res://Scripts/options.gd" id="1_5hy3q"]
+[ext_resource type="Texture2D" uid="uid://cydnohtkyqag0" path="res://Assets/Level-background/Main_menu.jpg" id="1_qqnya"]
+[ext_resource type="FontFile" uid="uid://kb47qdt1kowx" path="res://Assets/Fonts/HomeVideoBold-R90Dv.ttf" id="2_hg628"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hg628"]
+texture = ExtResource("1_qqnya")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5hy3q")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_hg628")
+
+[node name="back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 167.0
+offset_right = 64.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_hg628")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

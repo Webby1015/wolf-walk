@@ -9,6 +9,7 @@ const MAIN_MENU = preload("res://Scenes/MainMenu.tscn")
 @onready var splash_screen: TextureRect = $CenterContainer/TextureRect
 
 func _ready() -> void:
+	MusicManager.play_bg_music()
 	fade()
 
 func fade() -> void:
