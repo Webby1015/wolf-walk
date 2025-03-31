@@ -1,0 +1,19 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Wolf Walk"
+run/main_scene="uid://bllyx46gndh8s"
+config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+boot_splash/fullsize=false
+config/icon="uid://twa6dew3vbay"
