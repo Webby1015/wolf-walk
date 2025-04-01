@@ -13,7 +13,7 @@ func getScreenResolutions() -> Dictionary:
 			ResolutionList[i+1] = commonResolutions[i]
 
 	return ResolutionList
-	
+		
 func changeResolution(x:int,y:int) -> void:
 	DisplayServer.window_set_size(Vector2i(x,y))
 
