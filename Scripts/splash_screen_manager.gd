@@ -9,7 +9,10 @@ const MAIN_MENU = preload("res://Scenes/MainMenu.tscn")
 @onready var splash_screen: TextureRect = $CenterContainer/TextureRect
 
 func _ready() -> void:
-	MusicManager.play_bg_music()
+	GameManager.sounds.play_bg_music()
+	var resolution = DisplayServer.screen_get_size()
+	GameManager.screen.changeResolution(resolution.x,resolution.y)
+	GameManager.screen.fullScreen()
 	fade()
 
 func fade() -> void:
