@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bo243xsagt5mp"]
+[gd_scene load_steps=7 format=3 uid="uid://bo243xsagt5mp"]
 
 [ext_resource type="Script" uid="uid://b05xex5jnvbp0" path="res://Scripts/main_menu.gd" id="1_ghw46"]
 [ext_resource type="Texture2D" uid="uid://cydnohtkyqag0" path="res://Assets/Level-background/Main_menu.jpg" id="1_tt5f1"]
 [ext_resource type="FontFile" uid="uid://dd6o246n81vep" path="res://Assets/Fonts/SuperRugged-4nBy9.ttf" id="2_853f1"]
 [ext_resource type="FontFile" uid="uid://kb47qdt1kowx" path="res://Assets/Fonts/HomeVideoBold-R90Dv.ttf" id="3_8saeu"]
-[ext_resource type="AudioStream" uid="uid://c1bgbg5vdvhd8" path="res://Assets/Sounds/hoverOver.mp3" id="5_df05h"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_853f1"]
 texture = ExtResource("1_tt5f1")
@@ -84,9 +83,6 @@ theme_override_fonts/font = ExtResource("3_8saeu")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8saeu")
 text = "Quit Game"
-
-[node name="HoverSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_df05h")
 
 [connection signal="mouse_entered" from="HBoxContainer/StartButton" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/StartButton" to="." method="_on_start_pressed"]

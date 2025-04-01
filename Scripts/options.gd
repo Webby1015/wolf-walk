@@ -2,31 +2,26 @@ extends Control
 
 @onready var master_volume: HSlider = $"Panel/Master Volume"
 @onready var music_volume: HSlider = $"Panel/Music Volume"
-@onready var mute: CheckButton = $Panel/Mute
-@onready var resolution: OptionButton = $Panel/Resolution
 @onready var full_screen: CheckButton = $Panel/FullScreen
 
 
+
 func _ready() -> void:
-	master_volume.value = AudioServer.get_bus_volume_db(0)
-	full_screen.button_pressed = DisplayServer.window_get_mode(0) == DisplayServer.WINDOW_MODE_FULLSCREEN
 	pass
 
+	
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
-
+	GameManager.navigation.to_mainmenu()
 
 func _on_back_mouse_entered() -> void:
-	$HoverSound.play()
-
+	GameManager.sounds.hoverSound()
 
 func _on_master_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(0,value)
 
 
-
 func _on_music_volume_value_changed(value: float) -> void:
-	MusicManager.change_volume(value)
+	GameManager.sounds.change_music_volume(value)
 
 
 func _on_mute_toggled(toggled_on: bool) -> void:

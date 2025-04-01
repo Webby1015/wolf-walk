@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ss4td8hfgmwy"]
+[gd_scene load_steps=5 format=3 uid="uid://ss4td8hfgmwy"]
 
 [ext_resource type="Script" uid="uid://ddgcpysvqrnsg" path="res://Scripts/level_selection.gd" id="1_4sppe"]
 [ext_resource type="Texture2D" uid="uid://cydnohtkyqag0" path="res://Assets/Level-background/Main_menu.jpg" id="1_uu1jp"]
 [ext_resource type="FontFile" uid="uid://kb47qdt1kowx" path="res://Assets/Fonts/HomeVideoBold-R90Dv.ttf" id="2_68pxg"]
-[ext_resource type="AudioStream" uid="uid://c1bgbg5vdvhd8" path="res://Assets/Sounds/hoverOver.mp3" id="4_o87qn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_68pxg"]
 texture = ExtResource("1_uu1jp")
@@ -42,9 +41,6 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_68pxg")
 theme_override_font_sizes/font_size = 50
 text = "back"
-
-[node name="HoverSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_o87qn")
 
 [connection signal="mouse_entered" from="back" to="." method="_on_back_mouse_entered"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

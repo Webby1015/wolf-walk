@@ -20,7 +20,7 @@ config/icon="uid://twa6dew3vbay"
 
 [autoload]
 
-MusicManager="*res://Scenes/musicManager.tscn"
+GameManager="*res://Scenes/GameManager.tscn"
 
 [display]
 
