@@ -10,6 +10,9 @@ const MAIN_MENU = preload("res://Scenes/MainMenu.tscn")
 
 func _ready() -> void:
 	GameManager.sounds.play_bg_music()
+	var resolution = DisplayServer.screen_get_size()
+	GameManager.screen.changeResolution(resolution.x,resolution.y)
+	GameManager.screen.fullScreen()
 	fade()
 
 func fade() -> void:

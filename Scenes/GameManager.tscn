@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://mhurg5jy7utk"]
+[gd_scene load_steps=5 format=3 uid="uid://mhurg5jy7utk"]
 
 [ext_resource type="Script" uid="uid://dupsh64fd1hx2" path="res://Scripts/game_manager.gd" id="1_m2tc1"]
+[ext_resource type="Script" uid="uid://w81k73nxbiyo" path="res://Scripts/Game Manager/screen.gd" id="2_b7dir"]
 [ext_resource type="Script" uid="uid://byacqn2eftn6t" path="res://Scripts/Game Manager/navigation.gd" id="2_bwyv8"]
 [ext_resource type="Script" uid="uid://bfkqy8dw13q0m" path="res://Scripts/Game Manager/sounds.gd" id="3_7cxpe"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_m2tc1")
+
+[node name="screen" type="Node" parent="."]
+script = ExtResource("2_b7dir")
 
 [node name="navigation" type="Node" parent="."]
 script = ExtResource("2_bwyv8")
