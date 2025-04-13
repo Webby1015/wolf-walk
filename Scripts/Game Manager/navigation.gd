@@ -9,5 +9,8 @@ func to_levelSelection()->void:
 func to_options()->void:
 	get_tree().change_scene_to_file("res://Scenes/Options.tscn")
 
+func to_testLevel()->void:
+	get_tree().change_scene_to_file("res://Scenes/Levels/test_level.tscn")
+
 func quit_game()->void:
 	get_tree().quit()	

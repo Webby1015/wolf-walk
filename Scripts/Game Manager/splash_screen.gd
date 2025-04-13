@@ -10,6 +10,7 @@ extends Control
 @export var fade_out_time : float = 1.5
 @export var out_time : float = 0.5
 @onready var splash_screen: TextureRect = $CenterContainer/TextureRect
+@onready var color_rect: ColorRect = $ColorRect
 
 #var config = ConfigFile.new()
 #var config_path = "res://SavedSettings/settings.cfg"
@@ -28,7 +29,7 @@ func run() -> void:
 	tween.tween_interval(pause_time)
 	tween.tween_property(splash_screen,"modulate:a",0.0,fade_out_time)
 	tween.tween_interval(out_time)
-	
 	await tween.finished
+	color_rect.color = Color(0, 0, 0, 0)
 	
 	#get_tree().change_scene_to_packed(load_scene)
