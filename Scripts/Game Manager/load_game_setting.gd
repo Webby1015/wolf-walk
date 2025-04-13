@@ -12,9 +12,9 @@ func get_savedData():
 				"data" : data}
 	else:
 		return {"message" : "default data",
-				"data" : _getDefaultSettings()}
+				"data" : getDefaultSettings()}
 	
-func _getDefaultSettings()->Dictionary:
+func getDefaultSettings()->Dictionary:
 	var data = {
 		"button_volume": -20.0,
 		"fullscreen": true,

@@ -87,9 +87,17 @@ func _on_full_screen_toggled(toggled_on: bool) -> void:
 	GameManager.save_settings.save_fullscreen_state(toggled_on)
 
 func _on_reset_pressed() -> void:
-	pass
-
-
+	var data = GameManager.loadGameFiles.getDefaultSettings()
+	GameManager.save_settings.save(data)
+	GameManager.apply_init_settings.apply()
+	master_volume.value = data["master_volume"]
+	mute.button_pressed = data["mute"]
+	music_volume.value = data["music_volume"]
+	mute_music.button_pressed = data["mute_music"]
+	button_volume.value = data["button_volume"]
+	mute_buttons.button_pressed = data["mute_buttons"]
+	resolution.selected = data["resolution_index"]
+	full_screen.button_pressed = data["fullscreen"]
 #func _on_save_settings_pressed() -> void:
 	#save_settings()
 

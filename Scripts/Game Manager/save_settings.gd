@@ -40,6 +40,12 @@ func save_fullscreen_state(check:bool):
 	settings["fullscreen"] = check
 	_save_settings()
 	
+func save(data):
+	config.set_value("Settings", "data", data)
+	var error = config.save(config_path)
+	if error != OK:
+		push_warning("Error saving settings: " + str(error))
+
 func _save_settings() -> void:
 	config.set_value("Settings", "data", settings)
 	var error = config.save(config_path)
