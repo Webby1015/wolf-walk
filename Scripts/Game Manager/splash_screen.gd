@@ -1,8 +1,8 @@
 extends Control
 
 
-const MAIN_MENU = preload("res://Scenes/MainMenu.tscn")
-@export var load_scene : PackedScene = MAIN_MENU
+#const MAIN_MENU = preload("res://Scenes/MainMenu.tscn")
+#@export var load_scene : PackedScene = MAIN_MENU
 
 @export var in_time : float = 0.5
 @export var fade_intime : float = 1.5
@@ -11,16 +11,16 @@ const MAIN_MENU = preload("res://Scenes/MainMenu.tscn")
 @export var out_time : float = 0.5
 @onready var splash_screen: TextureRect = $CenterContainer/TextureRect
 
-var config = ConfigFile.new()
-var config_path = "res://SavedSettings/settings.cfg"
-var resolutionList
+#var config = ConfigFile.new()
+#var config_path = "res://SavedSettings/settings.cfg"
+#var resolutionList
 
-func _ready() -> void:
-	GameManager.load_game_setting.loadSettings()
-	fade()
+#func _ready() -> void:
+	#GameManager.load_game_setting.loadSettings()
+	#fade()
 
 		
-func fade() -> void:
+func run() -> void:
 	splash_screen.modulate.a = 0.0
 	var tween = self.create_tween()
 	tween.tween_interval(in_time) 
@@ -31,4 +31,4 @@ func fade() -> void:
 	
 	await tween.finished
 	
-	get_tree().change_scene_to_packed(load_scene)
+	#get_tree().change_scene_to_packed(load_scene)

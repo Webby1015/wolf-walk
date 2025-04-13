@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://mhurg5jy7utk"]
+[gd_scene load_steps=10 format=3 uid="uid://mhurg5jy7utk"]
 
 [ext_resource type="Script" uid="uid://dupsh64fd1hx2" path="res://Scripts/game_manager.gd" id="1_m2tc1"]
 [ext_resource type="Script" uid="uid://w81k73nxbiyo" path="res://Scripts/Game Manager/screen.gd" id="2_b7dir"]
 [ext_resource type="Script" uid="uid://byacqn2eftn6t" path="res://Scripts/Game Manager/navigation.gd" id="2_bwyv8"]
 [ext_resource type="Script" uid="uid://bfkqy8dw13q0m" path="res://Scripts/Game Manager/sounds.gd" id="3_7cxpe"]
+[ext_resource type="Script" uid="uid://dram6hs6r4ijh" path="res://Scripts/Game Manager/load_game_setting.gd" id="5_mmuqr"]
+[ext_resource type="Script" uid="uid://ck1kxki5jcqq" path="res://Scripts/Game Manager/splash_screen.gd" id="6_je8vj"]
+[ext_resource type="Texture2D" uid="uid://twa6dew3vbay" path="res://Assets/logo.png" id="6_xqbpr"]
+[ext_resource type="Script" uid="uid://2p1h3okev660" path="res://Scripts/Game Manager/save_settings.gd" id="9_8mb02"]
+[ext_resource type="Script" uid="uid://wvov0w1gqxay" path="res://Scripts/Game Manager/apply_init_settings.gd" id="10_2ykxs"]
 
-[node name="main" type="Node"]
+[node name="GameManager" type="Node"]
 script = ExtResource("1_m2tc1")
 
 [node name="screen" type="Node" parent="."]
@@ -20,3 +25,42 @@ script = ExtResource("3_7cxpe")
 [node name="hover soound" type="AudioStreamPlayer" parent="sounds"]
 
 [node name="background track" type="AudioStreamPlayer" parent="sounds"]
+
+[node name="LoadGameFiles" type="Node" parent="."]
+script = ExtResource("5_mmuqr")
+
+[node name="SplashScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_je8vj")
+
+[node name="ColorRect" type="ColorRect" parent="SplashScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="SplashScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="SplashScreen/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("6_xqbpr")
+
+[node name="saveSettings" type="Node" parent="."]
+script = ExtResource("9_8mb02")
+
+[node name="applyInitSettings" type="Node" parent="."]
+script = ExtResource("10_2ykxs")
