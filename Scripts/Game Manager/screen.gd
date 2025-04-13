@@ -5,12 +5,14 @@ var ResolutionList = {}
 
 func getScreenResolutions() -> Dictionary:
 	var resolution = DisplayServer.screen_get_size()
+	var key_count = 0
 	ResolutionList[0] = [resolution.x, resolution.y]
 	for i in range(commonResolutions.size()):
 		if commonResolutions[i] == [resolution.x, resolution.y]:
 			continue
-		else:
-			ResolutionList[i+1] = commonResolutions[i]
+		elif commonResolutions[i] != [resolution.x, resolution.y]:
+			key_count +=1
+			ResolutionList[key_count] = commonResolutions[i]
 
 	return ResolutionList
 		
