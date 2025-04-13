@@ -1,4 +1,9 @@
 # Godot 4+ specific ignores
 .godot/
-/android/
-*.tmp
+.import/
+*.ctmp*
+*.docdata
+*.scntmp
+*.scn.converted*
+*.tres.converted*
+export/
