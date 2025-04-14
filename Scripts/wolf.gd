@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 const WALK_SPEED = 100.0
 const RUN_SPEED = 200.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -300.0
 
 var current_speed = WALK_SPEED
 
@@ -15,6 +15,8 @@ func _physics_process(delta: float) -> void:
 		current_speed = RUN_SPEED
 		if is_on_floor() and velocity.x != 0:
 			animated_sprite_2d.play("run")
+		elif is_on_floor():
+			animated_sprite_2d.play("idle")
 	else:
 		current_speed = WALK_SPEED
 		if is_on_floor() and velocity.x != 0:

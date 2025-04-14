@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bfkqy8dw13q0m" path="res://Scripts/Game Manager/sounds.gd" id="3_7cxpe"]
 [ext_resource type="Script" uid="uid://dram6hs6r4ijh" path="res://Scripts/Game Manager/load_game_setting.gd" id="5_mmuqr"]
 [ext_resource type="Script" uid="uid://ck1kxki5jcqq" path="res://Scripts/Game Manager/splash_screen.gd" id="6_je8vj"]
-[ext_resource type="Texture2D" uid="uid://twa6dew3vbay" path="res://Assets/logo.png" id="6_xqbpr"]
+[ext_resource type="Texture2D" uid="uid://twa6dew3vbay" path="res://Assets/logo.png" id="7_8mb02"]
 [ext_resource type="Script" uid="uid://2p1h3okev660" path="res://Scripts/Game Manager/save_settings.gd" id="9_8mb02"]
 [ext_resource type="Script" uid="uid://wvov0w1gqxay" path="res://Scripts/Game Manager/apply_init_settings.gd" id="10_2ykxs"]
 
@@ -57,7 +57,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="SplashScreen/CenterContainer"]
 layout_mode = 2
-texture = ExtResource("6_xqbpr")
+texture = ExtResource("7_8mb02")
 
 [node name="saveSettings" type="Node" parent="."]
 script = ExtResource("9_8mb02")
