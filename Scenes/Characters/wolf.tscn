@@ -1,9 +1,13 @@
-[gd_scene load_steps=37 format=3 uid="uid://dje83yvxtxnbx"]
+[gd_scene load_steps=38 format=3 uid="uid://dje83yvxtxnbx"]
 
 [ext_resource type="Texture2D" uid="uid://q50lvbgpg0ci" path="res://Assets/Player/Wolf/Wolf_Walk.png" id="1_b1s83"]
 [ext_resource type="Script" uid="uid://bqfh2bvajooek" path="res://Scripts/wolf.gd" id="1_wutio"]
 [ext_resource type="Texture2D" uid="uid://0qtp0wdipe7g" path="res://Assets/Player/Wolf/Wolf_Howl.png" id="2_cp5o8"]
 [ext_resource type="Texture2D" uid="uid://c7ja8rryik4r1" path="res://Assets/Player/Wolf/Wolf_Run.png" id="3_xxdkm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ursk"]
+atlas = ExtResource("3_xxdkm")
+region = Rect2(128, 0, 64, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmavs"]
 atlas = ExtResource("3_xxdkm")
@@ -127,6 +131,14 @@ region = Rect2(0, 0, 64, 40)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0w474"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ursk")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dmavs")
@@ -257,9 +269,7 @@ script = ExtResource("1_wutio")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_0w474")
-animation = &"run"
-frame = 5
-frame_progress = 1.0
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 9)
